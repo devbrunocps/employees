@@ -1,0 +1,33 @@
+table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+table thead, tbody {
+    width: 100%;
+}
+
+table thead tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    background-color: #6b6b6b33;
+    padding: 1rem;
+    border-radius: 0.6rem;
+}
+
+table thead tr th, table tbody tr td {
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+table tbody tr{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 1rem;
+    border-radius: 0.6rem;
+}
+
+table tbody tr .icon {
+    cursor: pointer;
+}

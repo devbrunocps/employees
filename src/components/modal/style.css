@@ -1,0 +1,64 @@
+.container .modal {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #1b1b1ba4;
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.container .modal form {
+    width: 30rem;
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    gap: 2rem;
+}
+
+.container .modal form .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.container .modal form .input-group label {
+    font-size: 1.2rem;
+}
+
+.container .modal form .input-group input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #1b1b1ba4;
+    outline: none;
+    font-size: 1.1rem;
+    padding: 0.4rem 0;
+}
+
+.container .modal form .input-group input:focus {
+    border-bottom: 2px solid #4a84ff;
+}
+
+.container .modal form .btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.container .modal form .btn button {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: #4a84ff;
+    color: #ffffff;
+    font-size: 1.2rem;
+}
