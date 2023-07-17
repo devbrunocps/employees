@@ -12,6 +12,10 @@ function App() {
             let employ = JSON.parse(localStorage.getItem('employees'));
             setEmployees([...employ]);
         }
+        if (localStorage.getItem("count")) {
+            let count = JSON.parse(localStorage.getItem('count'));
+            setCount(count + 1)
+        }
     };
 
     let showModal = () => {
@@ -28,7 +32,7 @@ function App() {
         let salary = document.getElementById("salary");
 
         let employ = {
-            id: employees.length,
+            id: count,
             name: name.value,
             office: office.value,
             dpto: dpto.value,
@@ -36,7 +40,7 @@ function App() {
         };
 
         setEmployees([...employees, employ]);
-        setCount(count + 1)
+        setCount((countState) => countState + 1)
 
         name.value = '';
         office.value = '';
@@ -46,6 +50,7 @@ function App() {
         console.log(employees);
 
         localStorage.setItem('employees', JSON.stringify([...employees, employ]));
+        localStorage.setItem('count', JSON.stringify(count));
         document.getElementById('modal').style.display = 'none';
     };
 
@@ -60,14 +65,15 @@ function App() {
         let dpto = document.getElementById("dpto");
         let salary = document.getElementById("salary");
 
-        name.value = employees[indexElementChange].name
-        office.value = employees[indexElementChange].office
-        dpto.value = employees[indexElementChange].dpto
-        salary.value = employees[indexElementChange].salary
+        let employ = employees.filter(el => el.id == indexElementChange);
+
+        name.value = employ[0].name;
+        office.value = employ[0].office;
+        dpto.value = employ[0].dpto;
+        salary.value = employ[0].salary;
 
 
-        let newArr = employees
-        newArr.splice(indexElementChange, 1)
+        let newArr = employees.filter(el => el.id != indexElementChange);
         setEmployees(newArr);
 
         localStorage.setItem('employees', JSON.stringify(employees));
@@ -82,7 +88,7 @@ function App() {
 
         let newArr = employees.filter(el => el.id != indexElementChange);
         setEmployees(newArr);
-        
+
         localStorage.setItem('employees', JSON.stringify(newArr));
     }
 

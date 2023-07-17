@@ -12,7 +12,7 @@ let Tab = (props) => {
                 <tbody id="tbody">
                     {props.employees.map((item, index) => {
                         return (
-                            <tr key={index} data-id={index}>
+                            <tr key={item.id} data-id={item.id}>
                                 <td className="name">{item.name}</td>
                                 <td className="office">{item.office}</td>
                                 <td className="dpto">{item.dpto}</td>
